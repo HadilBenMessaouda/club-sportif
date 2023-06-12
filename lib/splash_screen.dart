@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:easy_splash_screen/easy_splash_screen.dart';
+
 class Spalch_screen extends StatefulWidget{
+
   const Spalch_screen ({ Key? key}):super (key:key);
 
   @override
@@ -12,11 +14,11 @@ class _Spalch_screenState extends State<Spalch_screen> {
   Widget build(BuildContext context) {
     return EasySplashScreen(
       logo: Image.network(
-          'https://cdn4.iconfinder.com/data/icons/logos-brands-5/24/flutter-512.png'),
+          'https://upload.wikimedia.org/wikipedia/fr/thumb/5/52/Blason_%C3%A9toile_du_sahel.svg/1200px-Blason_%C3%A9toile_du_sahel.svg.png'),
       title: Text(
-        "Title",
+        "Welcome",
         style: TextStyle(
-          fontSize: 18,
+          fontSize: 25,
           fontWeight: FontWeight.bold,
         ),
       ),

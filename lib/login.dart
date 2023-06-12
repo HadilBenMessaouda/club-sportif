@@ -1,20 +1,17 @@
 import 'package:animated_login/animated_login.dart';
 import 'package:flutter/material.dart';
 
-
-
-
-class LoginScreen extends StatefulWidget {
+class Login_Screen extends StatefulWidget {
   /// Simulates the multilanguage, you will implement your own logic.
   /// According to the current language, you can display a text message
   /// with the help of [LoginTexts] class.
-  const LoginScreen({Key? key}) : super(key: key);
+  const Login_Screen({Key? key}) : super(key: key);
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<Login_Screen> createState() => _LoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _LoginScreenState extends State<Login_Screen> {
   LanguageOption language = _languageOptions[1];
   AuthMode currentMode = AuthMode.login;
 
@@ -93,11 +90,11 @@ class _LoginScreenState extends State<LoginScreen> {
 
   /// You can adjust the texts in the screen according to the current language
   /// With the help of [LoginTexts], you can create a multilanguage scren.
-  String get _username => language.code == 'EN' ? 'Hadil1' : 'Username';
+  String get _username => language.code == 'EN' ? 'Username' : 'Username';
 
-  String get _login => language.code == 'EN' ? 'Hadil1' : 'Login';
+  String get _login => language.code == 'EN' ? 'LOGIN' : 'Login';
 
-  String get _signup => language.code == 'EN' ? 'Hadil1' : 'Sign Up';
+  String get _signup => language.code == 'EN' ? 'SIGN UP' : 'Sign Up';
 
   /// Social login options, you should provide callback function and icon path.
   /// Icon paths should be the full path in the assets
@@ -112,8 +109,8 @@ class _LoginScreenState extends State<LoginScreen> {
             iconPath: 'images/fcb.png'),
         SocialLogin(
             callback: () async =>
-                LoginFunctions(context).socialLogin('LinkedIn'),
-            iconPath: 'images/linked.png'),
+                LoginFunctions(context).socialLogin('Apple'),
+            iconPath: 'images/apple.png'),
       ];
 }
 
@@ -126,7 +123,7 @@ class LoginFunctions {
   /// Login action that will be performed on click to action button in login mode.
   Future<String?> onLogin(LoginData loginData) async {
     DialogBuilder(context).showLoadingDialog();
-    await Future.delayed(const Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 1));
     Navigator.of(context).pop();
     DialogBuilder(context).showResultDialog('Successful login.');
     return null;
@@ -135,7 +132,7 @@ class LoginFunctions {
   /// Sign up action that will be performed on click to action button in sign up mode.
   Future<String?> onSignup(SignUpData signupData) async {
     DialogBuilder(context).showLoadingDialog();
-    await Future.delayed(const Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 1));
     Navigator.of(context).pop();
     DialogBuilder(context).showResultDialog('Successful sign up.');
     return null;
@@ -144,7 +141,7 @@ class LoginFunctions {
   /// Social login callback example.
   Future<String?> socialLogin(String type) async {
     DialogBuilder(context).showLoadingDialog();
-    await Future.delayed(const Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 1));
     Navigator.of(context).pop();
     DialogBuilder(context)
         .showResultDialog('Successful social login with $type.');
@@ -155,10 +152,10 @@ class LoginFunctions {
   /// Probably you will navigate user to a page to create a new password after the verification.
   Future<String?> onForgotPassword(String email) async {
     DialogBuilder(context).showLoadingDialog();
-    await Future.delayed(const Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 1));
     Navigator.of(context).pop();
     // You should determine this path and create the screen.
-    // Navigator.of(context).pushNamed('/forgotPass');
+    //Navigator.of(context).pushNamed('/forgotPass');
     return null;
   }
 }

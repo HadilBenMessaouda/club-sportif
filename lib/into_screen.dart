@@ -1,6 +1,7 @@
+import 'package:app/Login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:onboarding/onboarding.dart';
-import 'package:app/login.dart';
+
 
 
 class TestScreen extends StatefulWidget {
@@ -10,7 +11,7 @@ class TestScreen extends StatefulWidget {
 }
 
 class _TestScreenState extends State<TestScreen> {
-   late Material materialButton;
+  late Material materialButton;
   late int index;
   final onboardingPagesList = [
     PageModel(
@@ -36,11 +37,11 @@ class _TestScreenState extends State<TestScreen> {
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 45.0),
                 child: Align(
-                  alignment: Alignment.centerLeft,
+                  alignment: Alignment.center,
                   child: Text(
                     'News of your favorite club',
                     style: pageTitleStyle,
-                    textAlign: TextAlign.left,
+                    textAlign: TextAlign.center,
                   ),
                 ),
               ),
@@ -48,7 +49,7 @@ class _TestScreenState extends State<TestScreen> {
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 45.0, vertical: 10.0),
                 child: Align(
-                  alignment: Alignment.centerLeft,
+                  alignment: Alignment.center,
                   child: Text(
                     'Keep your self close to your club by watching their news regularly',
                     style: pageInfoStyle,
@@ -84,7 +85,7 @@ class _TestScreenState extends State<TestScreen> {
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 45.0),
                 child: Align(
-                  alignment: Alignment.centerLeft,
+                  alignment: Alignment.center,
                   child: Text(
                     'CHANGE AND RISE',
                     style: pageTitleStyle,
@@ -95,7 +96,7 @@ class _TestScreenState extends State<TestScreen> {
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 45.0, vertical: 10.0),
                 child: Align(
-                  alignment: Alignment.centerLeft,
+                  alignment: Alignment.center,
                   child: Text(
                     'your best player',
                     style: pageInfoStyle,
@@ -131,7 +132,7 @@ class _TestScreenState extends State<TestScreen> {
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 45.0),
                 child: Align(
-                  alignment: Alignment.centerLeft,
+                  alignment: Alignment.center,
                   child: Text(
                     'Tachkila',
                     style: pageTitleStyle,
@@ -142,7 +143,7 @@ class _TestScreenState extends State<TestScreen> {
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 45.0, vertical: 10.0),
                 child: Align(
-                  alignment: Alignment.centerLeft,
+                  alignment: Alignment.center,
                   child: Text('you can form your own team'
                     ,
                     style: pageInfoStyle,
@@ -202,7 +203,7 @@ class _TestScreenState extends State<TestScreen> {
       child: Padding(
         padding: defaultProceedButtonPadding,
         child: Text(
-          'Sign in',
+          'SIGN IN',
           style: defaultProceedButtonTextStyle,
         ),
       ),
