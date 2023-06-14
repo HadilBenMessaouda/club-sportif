@@ -1,3 +1,4 @@
+import 'package:app/login.dart';
 import 'package:flutter/material.dart';
 
 class ForgotPasswordPage extends StatelessWidget {
@@ -33,6 +34,8 @@ class ForgotPasswordPage extends StatelessWidget {
                 SizedBox(height: 50,),
                 
                   TextField(
+                    style: TextStyle(
+                    color: Color.fromARGB(255, 239, 49, 49),),
                     decoration: InputDecoration(
                       prefixIcon: Padding(
                       padding: EdgeInsets.only(left: 10.0),
@@ -41,13 +44,13 @@ class ForgotPasswordPage extends StatelessWidget {
                       filled: true,
                       fillColor: Colors.white,
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(40),
+                        borderRadius: BorderRadius.circular(45),
                       ),
                       
                     ),
                   ),
                 
-                SizedBox(height: 20),
+                SizedBox(height:12),
                 ElevatedButton(
                   onPressed: () {
                     // Implémentez ici la logique de réinitialisation du mot de passe
@@ -83,14 +86,21 @@ class ForgotPasswordPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 40),
+                SizedBox(height: 50),
               
-                Text("Already have an account",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.normal,
-                  color: Colors.white,),
-                ),
+                TextButton(
+                  onPressed: (){
+                    Navigator.of(context).pop();
+                  },
+                  child: Text(
+                    'Back to LOGIN',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      decoration: TextDecoration.underline,
+                      letterSpacing: 1.5,
+                      fontWeight: FontWeight.normal,),
+                    ), ),
               ],
             
             ),

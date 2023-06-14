@@ -1,5 +1,5 @@
 import 'package:animated_login/animated_login.dart';
-import 'package:app/forgotPassword.dart';
+import 'package:app/forgotPass.dart';
 import 'package:app/home.dart';
 import 'package:flutter/material.dart';
 
@@ -169,9 +169,9 @@ class LoginFunctions {
   /// Action that will be performed on click to "Forgot Password?" text/CTA.
   /// Probably you will navigate user to a page to create a new password after the verification.
   Future<String?> onForgotPassword(String email) async {
-    DialogBuilder(context).showLoadingDialog();
+    //DialogBuilder(context).showLoadingDialog();
     // await Future.delayed(const Duration(seconds: 1));
-     Navigator.of(context).pop();
+    // Navigator.of(context).pop();
     // You should determine this path and create the screen.
     // Navigator.of(context).pushNamed('/forgotPass');
 
