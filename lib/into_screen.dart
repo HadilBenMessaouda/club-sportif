@@ -87,7 +87,7 @@ class _TestScreenState extends State<TestScreen> {
                   child: Text(
                     'CHANGE AND RISE',
                     style: pageTitleStyle,
-                    textAlign: TextAlign.left,
+                    textAlign: TextAlign.center,
                   ),
                 ),
               ),
@@ -140,7 +140,7 @@ PageModel(
                   child: Text(
                     'STREAMING LIVE ',
                     style: pageTitleStyle,
-                    textAlign: TextAlign.left,
+                    textAlign: TextAlign.center,
                   ),
                 ),
               ),
@@ -192,7 +192,7 @@ PageModel(
                   child: Text(
                     'Tachkila',
                     style: pageTitleStyle,
-                    textAlign: TextAlign.left,
+                    textAlign: TextAlign.center,
                   ),
                 ),
               ),
@@ -230,10 +230,10 @@ PageModel(
 
   Material _skipButton({void Function(int)? setIndex}) {
     return Material(
-      borderRadius: defaultSkipButtonBorderRadius,
-      color: defaultSkipButtonColor,
+      borderRadius: BorderRadius.all(Radius.circular(20.0)),
+      color: Colors.red,
       child: InkWell(
-        borderRadius: defaultSkipButtonBorderRadius,
+        borderRadius: BorderRadius.all(Radius.circular(20.0)),
         onTap: () {
           if (setIndex != null) {
             index = 3;
@@ -241,10 +241,10 @@ PageModel(
           }
         },
         child: const Padding(
-          padding: defaultSkipButtonPadding,
+          padding:  EdgeInsets.symmetric(horizontal: 17.0, vertical: 5.0),
           child: Text(
-            'SKIP',
-            style: defaultSkipButtonTextStyle,
+            ' SKIP ',
+            style: TextStyle(color: Colors.white, letterSpacing: 1.0),
           ),
         ),
       ),
@@ -253,10 +253,10 @@ PageModel(
 
   Material get _signinButton {
     return Material(
-      borderRadius: defaultProceedButtonBorderRadius,
-      color: defaultProceedButtonColor,
+      borderRadius: BorderRadius.all(Radius.circular(20.0)),
+      color: Colors.red,
       child: InkWell(
-        borderRadius: defaultProceedButtonBorderRadius,
+        borderRadius: BorderRadius.all(Radius.circular(20.0)),
         onTap: () async {
           final prefs =await SharedPreferences.getInstance();
           prefs.setBool('showlogin',true);
@@ -266,10 +266,10 @@ PageModel(
           );
         },
         child: Padding(
-          padding: defaultProceedButtonPadding,
+          padding: EdgeInsets.symmetric(horizontal: 17.0, vertical: 5.0),
           child: Text(
-            'Sign in',
-            style: defaultProceedButtonTextStyle,
+            ' SIGN IN ',
+            style: TextStyle(color: Colors.white, letterSpacing: 1.0),
           ),
         ),
       ),
