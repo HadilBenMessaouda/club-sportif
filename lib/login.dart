@@ -1,14 +1,13 @@
 import 'package:animated_login/animated_login.dart';
 import 'package:flutter/material.dart';
 
-
-
-
 class LoginScreen extends StatefulWidget {
   /// Simulates the multilanguage, you will implement your own logic.
   /// According to the current language, you can display a text message
   /// with the help of [LoginTexts] class.
   const LoginScreen({Key? key}) : super(key: key);
+
+  get _mobileTheme => null;
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -77,7 +76,8 @@ class _LoginScreenState extends State<LoginScreen> {
   /// You can also set some additional display options such as [showLabelTexts].
   LoginViewTheme get _mobileTheme => LoginViewTheme(
         // showLabelTexts: false,
-        backgroundColor: Color.fromARGB(255, 128, 4, 4), // const Color(0xFF6666FF),
+        backgroundColor:
+            Color.fromARGB(255, 128, 4, 4), // const Color(0xFF6666FF),
         formFieldBackgroundColor: Colors.white,
         formWidthRatio: 60,
         // actionButtonStyle: ButtonStyle(
@@ -93,11 +93,11 @@ class _LoginScreenState extends State<LoginScreen> {
 
   /// You can adjust the texts in the screen according to the current language
   /// With the help of [LoginTexts], you can create a multilanguage scren.
-  String get _username => language.code == 'EN' ? 'Hadil1' : 'Username';
+  String get _username => language.code == 'EN' ? 'Username' : 'Username';
 
-  String get _login => language.code == 'EN' ? 'Hadil1' : 'Login';
+  String get _login => language.code == 'EN' ? 'Login' : 'Login';
 
-  String get _signup => language.code == 'EN' ? 'Hadil1' : 'Sign Up';
+  String get _signup => language.code == 'EN' ? 'Sign Up' : 'Sign Up';
 
   /// Social login options, you should provide callback function and icon path.
   /// Icon paths should be the full path in the assets
@@ -158,7 +158,7 @@ class LoginFunctions {
     await Future.delayed(const Duration(seconds: 2));
     Navigator.of(context).pop();
     // You should determine this path and create the screen.
-    // Navigator.of(context).pushNamed('/forgotPass');
+    Navigator.of(context).pushNamed('/forgotPass');
     return null;
   }
 }
@@ -176,7 +176,7 @@ class DialogBuilder {
         builder: (BuildContext context) => WillPopScope(
           onWillPop: () async => false,
           child: const AlertDialog(
-            content:  SizedBox(
+            content: SizedBox(
               width: 100,
               height: 100,
               child: Center(
@@ -189,7 +189,6 @@ class DialogBuilder {
           ),
         ),
       );
-      
 
   /// Example result dialog
   Future<void> showResultDialog(String text) => showDialog(
@@ -202,5 +201,4 @@ class DialogBuilder {
           ),
         ),
       );
-    
 }
