@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:onboarding/onboarding.dart';
 
 
+import 'package:app/login.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 class TestScreen extends StatefulWidget {
- const TestScreen({Key? key}) : super (key:key);
+  const TestScreen({Key? key}) : super(key: key);
   @override
   State<TestScreen> createState() => _TestScreenState();
 }
@@ -12,6 +14,9 @@ class TestScreen extends StatefulWidget {
 class _TestScreenState extends State<TestScreen> {
   late Material materialButton;
   late int index;
+  int currentIndex = 0;
+  late PageController _pageController;
+  
   final onboardingPagesList = [
     PageModel(
       widget: DecoratedBox(
@@ -26,9 +31,15 @@ class _TestScreenState extends State<TestScreen> {
           controller: ScrollController(),
           child: Column(
             children: [
-               const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 45.0,
-                  vertical: 90.0,),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 45.0,
+                  vertical: 90.0,
+                ),
+                child: Image.asset('images/news1.jpg', height: 200, width: 200),
+              ),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 45.0),
                 child: Align(
                   alignment: Alignment.center,
                   child: Text(
@@ -38,15 +49,6 @@ class _TestScreenState extends State<TestScreen> {
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 45.0,
-                 // vertical: 5.0,
-                ),
-                child: Image.asset('images/news1.jpg',height: 200, width: 200),
-              ),
-             
-            
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 45.0, vertical: 20.0),
                 child: Align(
@@ -76,6 +78,14 @@ class _TestScreenState extends State<TestScreen> {
           controller: ScrollController(),
           child: Column(
             children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 45.0,
+                  vertical: 90.0,
+                ),
+                child:
+                    Image.asset('images/players.jpg', height: 200, width: 200),
+              ),
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 45.0,
                 vertical:110.0),
@@ -177,6 +187,14 @@ PageModel(
           controller: ScrollController(),
           child: Column(
             children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 45.0,
+                  vertical: 90.0,
+                ),
+                child:
+                    Image.asset('images/tachkila.jpg', height: 200, width: 200),
+              ),
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 45.0,
                 vertical: 110.0,),
@@ -245,28 +263,29 @@ PageModel(
   }
 
   Material get _signinButton {
-  return Material(
-    borderRadius: defaultProceedButtonBorderRadius,
-    color: defaultProceedButtonColor,
-    child: InkWell(
+    return Material(
       borderRadius: defaultProceedButtonBorderRadius,
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => LoginScreen()),
-        );
-      },
-      child: Padding(
-        padding: defaultProceedButtonPadding,
-        child: Text(
-          'SIGN IN',
-          style: defaultProceedButtonTextStyle,
+      color: defaultProceedButtonColor,
+      child: InkWell(
+        borderRadius: defaultProceedButtonBorderRadius,
+        onTap: () async {
+          final prefs =await SharedPreferences.getInstance();
+          prefs.setBool('showlogin',true);
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => LoginScreen()),
+          );
+        },
+        child: Padding(
+          padding: defaultProceedButtonPadding,
+          child: Text(
+            'Sign in',
+            style: defaultProceedButtonTextStyle,
+          ),
         ),
       ),
-    ),
-  );
-}
-
+    );
+  }
 
   @override
   Widget build(BuildContext context) {

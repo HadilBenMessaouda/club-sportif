@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'user_model.dart';
 
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenState extends State<HomePage> {
   // User? user = FirebaseAuth.instance.currentUser;
   UserModel loggedInUser = UserModel();
 

@@ -1,4 +1,6 @@
 import 'package:animated_login/animated_login.dart';
+import 'package:app/forgotPassword.dart';
+import 'package:app/home.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -6,6 +8,8 @@ class LoginScreen extends StatefulWidget {
   /// According to the current language, you can display a text message
   /// with the help of [LoginTexts] class.
   const LoginScreen({Key? key}) : super(key: key);
+
+  get _mobileTheme => null;
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -74,7 +78,8 @@ class _LoginScreenState extends State<LoginScreen> {
   /// You can also set some additional display options such as [showLabelTexts].
   LoginViewTheme get _mobileTheme => LoginViewTheme(
         // showLabelTexts: false,
-        backgroundColor: Color.fromARGB(255, 128, 4, 4), // const Color(0xFF6666FF),
+        backgroundColor:
+            Color.fromARGB(255, 128, 4, 4), // const Color(0xFF6666FF),
         formFieldBackgroundColor: Colors.white,
         formWidthRatio: 60,
         // actionButtonStyle: ButtonStyle(
@@ -90,11 +95,11 @@ class _LoginScreenState extends State<LoginScreen> {
 
   /// You can adjust the texts in the screen according to the current language
   /// With the help of [LoginTexts], you can create a multilanguage scren.
-  String get _username => language.code == 'EN' ? 'Username' : 'Username';
+  String get _username => language.code == 'TUN' ? 'الاسم ' : 'Username';
 
-  String get _login => language.code == 'EN' ? 'LOGIN' : 'Login';
+  String get _login => language.code == 'TUN' ? 'دخول ' : 'Login';
 
-  String get _signup => language.code == 'EN' ? 'SIGN UP' : 'Sign Up';
+  String get _signup => language.code == 'TUN' ? 'مشاركة ' : 'Sign Up';
 
   /// Social login options, you should provide callback function and icon path.
   /// Icon paths should be the full path in the assets
@@ -135,6 +140,10 @@ class LoginFunctions {
     await Future.delayed(const Duration(seconds: 1));
     Navigator.of(context).pop();
     DialogBuilder(context).showResultDialog('Successful login.');
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => HomePage()),
+    );
     return null;
   }
 
@@ -164,8 +173,15 @@ class LoginFunctions {
     // await Future.delayed(const Duration(seconds: 1));
      Navigator.of(context).pop();
     // You should determine this path and create the screen.
-    Navigator.of(context).pushNamed('/forgotPass');
+    // Navigator.of(context).pushNamed('/forgotPass');
+
+    // ignore: use_build_context_synchronously
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => ForgotPasswordPage()),
+    );
     return null;
+    
   }
 }
 
@@ -182,7 +198,7 @@ class DialogBuilder {
         builder: (BuildContext context) => WillPopScope(
           onWillPop: () async => false,
           child: const AlertDialog(
-            content:  SizedBox(
+            content: SizedBox(
               width: 100,
               height: 100,
               child: Center(
@@ -195,7 +211,6 @@ class DialogBuilder {
           ),
         ),
       );
-      
 
   /// Example result dialog
   Future<void> showResultDialog(String text) => showDialog(
@@ -208,5 +223,4 @@ class DialogBuilder {
           ),
         ),
       );
-    
 }
