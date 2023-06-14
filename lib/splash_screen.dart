@@ -39,11 +39,7 @@ class _SplashScreenState extends State<SplashScreen> {
       logo: Image.network(
           'https://upload.wikimedia.org/wikipedia/fr/thumb/5/52/Blason_%C3%A9toile_du_sahel.svg/1200px-Blason_%C3%A9toile_du_sahel.svg.png'),
       title: Text(
-<<<<<<< HEAD
         "ESS club",
-=======
-        "Welcome",
->>>>>>> 5650ed241ceee81826f1f6423ae2af9ee4ab043f
         style: TextStyle(
           fontSize: 25,
           fontWeight: FontWeight.bold,
