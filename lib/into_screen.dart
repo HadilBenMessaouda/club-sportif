@@ -31,15 +31,9 @@ class _TestScreenState extends State<TestScreen> {
           controller: ScrollController(),
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 45.0,
-                  vertical: 90.0,
-                ),
-                child: Image.asset('images/news1.jpg', height: 200, width: 200),
-              ),
               const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 45.0),
+                padding: EdgeInsets.symmetric(horizontal: 45.0,
+                vertical:90.0),
                 child: Align(
                   alignment: Alignment.center,
                   child: Text(
@@ -49,6 +43,14 @@ class _TestScreenState extends State<TestScreen> {
                   ),
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 45.0,
+                  //vertical: 130.0,
+                ),
+                child: Image.asset('images/news1.jpg', height: 200, width: 200),
+              ),
+              
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 45.0, vertical: 20.0),
                 child: Align(
@@ -78,14 +80,7 @@ class _TestScreenState extends State<TestScreen> {
           controller: ScrollController(),
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 45.0,
-                  vertical: 90.0,
-                ),
-                child:
-                    Image.asset('images/players.jpg', height: 200, width: 200),
-              ),
+              
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 45.0,
                 vertical:110.0),
@@ -101,12 +96,14 @@ class _TestScreenState extends State<TestScreen> {
               Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 45.0,
-                  //vertical: 10.0,
+                  //vertical: 130.0,
                 ),
                 child: Image.asset('images/players.jpg',height: 200,width: 200),
               ),
               const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 45.0, vertical: 20.0),
+                padding: EdgeInsets.symmetric(horizontal: 45.0, 
+                vertical: 20.0
+                ),
                 child: Align(
                   alignment: Alignment.center,
                   child: Text(
@@ -152,12 +149,14 @@ PageModel(
               Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 45.0,
-                //  vertical: 20.0,
+                //vertical: 130.0,
                 ),
                 child: Image.asset('images/live.png', height: 200,width: 200),
               ),
               const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 45.0, vertical: 20.0),
+                padding: EdgeInsets.symmetric(horizontal: 45.0, 
+                vertical: 20.0
+                ),
                 child: Align(
                   alignment: Alignment.center,
                   child: Text('You can watch your match in streaming live with high quality'
@@ -187,15 +186,7 @@ PageModel(
           controller: ScrollController(),
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 45.0,
-                  vertical: 90.0,
-                ),
-                child:
-                    Image.asset('images/tachkila.jpg', height: 200, width: 200),
-              ),
-              const Padding(
+             const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 45.0,
                 vertical: 110.0,),
                 child: Align(
@@ -210,7 +201,7 @@ PageModel(
               Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 45.0,
-                 // vertical: 20.0,
+                  vertical: 20.0,
                 ),
                 child: Image.asset('images/tachkila.jpg', height: 200,width: 200),
               ),
