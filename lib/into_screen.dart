@@ -1,8 +1,6 @@
 import 'package:app/login.dart';
 import 'package:flutter/material.dart';
 import 'package:onboarding/onboarding.dart';
-
-
 import 'package:app/login.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 class TestScreen extends StatefulWidget {
@@ -21,10 +19,10 @@ class _TestScreenState extends State<TestScreen> {
     PageModel(
       widget: DecoratedBox(
         decoration: BoxDecoration(
-          color: background,
+          color: Colors.white,
           border: Border.all(
             width: 0.0,
-            color: background,
+            color: Colors.white,
           ),
         ),
         child: SingleChildScrollView(
@@ -70,10 +68,10 @@ class _TestScreenState extends State<TestScreen> {
     PageModel(
       widget: DecoratedBox(
         decoration: BoxDecoration(
-          color: background,
+          color: Colors.white,
           border: Border.all(
             width: 0.0,
-            color: background,
+            color: Colors.white,
           ),
         ),
         child: SingleChildScrollView(
@@ -124,10 +122,10 @@ class _TestScreenState extends State<TestScreen> {
 PageModel(
       widget: DecoratedBox(
         decoration: BoxDecoration(
-          color: background,
+          color: Colors.white,
           border: Border.all(
             width: 0.0,
-            color: background,
+            color: Colors.white,
           ),
         ),
         child: SingleChildScrollView(
@@ -176,10 +174,10 @@ PageModel(
     PageModel(
       widget: DecoratedBox(
         decoration: BoxDecoration(
-          color: background,
+          color: Colors.white,
           border: Border.all(
             width: 0.0,
-            color: background,
+            color: Colors.white,
           ),
         ),
         child: SingleChildScrollView(
@@ -297,14 +295,14 @@ PageModel(
           footerBuilder: (context, dragDistance, pagesLength, setIndex) {
             return DecoratedBox(
               decoration: BoxDecoration(
-                color: background,
+                color: Colors.white,
                 border: Border.all(
                   width: 0.0,
-                  color: background,
+                  color: Colors.white,
                 ),
               ),
               child: ColoredBox(
-                color: background,
+                color: Colors.white,
                 child: Padding(
                   padding: const EdgeInsets.all(45.0),
                   child: Row(
