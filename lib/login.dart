@@ -1,4 +1,6 @@
 import 'package:animated_login/animated_login.dart';
+import 'package:app/forgotPassword.dart';
+import 'package:app/home.dart';
 import 'package:flutter/material.dart';
 
 
@@ -93,11 +95,11 @@ class _LoginScreenState extends State<LoginScreen> {
 
   /// You can adjust the texts in the screen according to the current language
   /// With the help of [LoginTexts], you can create a multilanguage scren.
-  String get _username => language.code == 'EN' ? 'Hadil1' : 'Username';
+  String get _username => language.code == 'TUN' ? 'الاسم ' : 'Username';
 
-  String get _login => language.code == 'EN' ? 'Hadil1' : 'Login';
+  String get _login => language.code == 'TUN' ? 'دخول ' : 'Login';
 
-  String get _signup => language.code == 'EN' ? 'Hadil1' : 'Sign Up';
+  String get _signup => language.code == 'TUN' ? 'مشاركة ' : 'Sign Up';
 
   /// Social login options, you should provide callback function and icon path.
   /// Icon paths should be the full path in the assets
@@ -106,6 +108,7 @@ class _LoginScreenState extends State<LoginScreen> {
         SocialLogin(
             callback: () async => LoginFunctions(context).socialLogin('Google'),
             iconPath: 'images/google.png'),
+            
         SocialLogin(
             callback: () async =>
                 LoginFunctions(context).socialLogin('Facebook'),
@@ -129,6 +132,10 @@ class LoginFunctions {
     await Future.delayed(const Duration(seconds: 2));
     Navigator.of(context).pop();
     DialogBuilder(context).showResultDialog('Successful login.');
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => HomePage()),
+    );
     return null;
   }
 
@@ -159,7 +166,14 @@ class LoginFunctions {
     Navigator.of(context).pop();
     // You should determine this path and create the screen.
     // Navigator.of(context).pushNamed('/forgotPass');
+
+    // ignore: use_build_context_synchronously
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => ForgotPasswordPage()),
+    );
     return null;
+    
   }
 }
 

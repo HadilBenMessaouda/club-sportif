@@ -12,9 +12,9 @@ class _Spalch_screenState extends State<Spalch_screen> {
   Widget build(BuildContext context) {
     return EasySplashScreen(
       logo: Image.network(
-          'https://cdn4.iconfinder.com/data/icons/logos-brands-5/24/flutter-512.png'),
+          'https://upload.wikimedia.org/wikipedia/fr/thumb/5/52/Blason_%C3%A9toile_du_sahel.svg/1200px-Blason_%C3%A9toile_du_sahel.svg.png'),
       title: Text(
-        "Title",
+        "ESS club",
         style: TextStyle(
           fontSize: 18,
           fontWeight: FontWeight.bold,
