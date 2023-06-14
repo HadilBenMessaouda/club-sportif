@@ -1,17 +1,17 @@
 import 'package:animated_login/animated_login.dart';
 import 'package:flutter/material.dart';
 
-class Login_Screen extends StatefulWidget {
+class LoginScreen extends StatefulWidget {
   /// Simulates the multilanguage, you will implement your own logic.
   /// According to the current language, you can display a text message
   /// with the help of [LoginTexts] class.
-  const Login_Screen({Key? key}) : super(key: key);
+  const LoginScreen({Key? key}) : super(key: key);
 
   @override
-  State<Login_Screen> createState() => _LoginScreenState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _LoginScreenState extends State<Login_Screen> {
+class _LoginScreenState extends State<LoginScreen> {
   LanguageOption language = _languageOptions[1];
   AuthMode currentMode = AuthMode.login;
 
@@ -102,15 +102,24 @@ class _LoginScreenState extends State<Login_Screen> {
   List<SocialLogin> _socialLogins(BuildContext context) => <SocialLogin>[
         SocialLogin(
             callback: () async => LoginFunctions(context).socialLogin('Google'),
-            iconPath: 'images/google.png'),
+            iconPath: 'images/google.png',
+            width: 50.0,
+            height: 50.0,
+           ),
         SocialLogin(
             callback: () async =>
                 LoginFunctions(context).socialLogin('Facebook'),
-            iconPath: 'images/fcb.png'),
+            iconPath: 'images/fcb.png',
+            width: 50.0,
+            height: 50.0,
+           ),
         SocialLogin(
             callback: () async =>
                 LoginFunctions(context).socialLogin('Apple'),
-            iconPath: 'images/apple.png'),
+            iconPath: 'images/app.jpg', 
+            width: 50.0,
+            height: 50.0,
+           ),
       ];
 }
 
@@ -152,10 +161,10 @@ class LoginFunctions {
   /// Probably you will navigate user to a page to create a new password after the verification.
   Future<String?> onForgotPassword(String email) async {
     DialogBuilder(context).showLoadingDialog();
-    await Future.delayed(const Duration(seconds: 1));
-    Navigator.of(context).pop();
+    // await Future.delayed(const Duration(seconds: 1));
+     Navigator.of(context).pop();
     // You should determine this path and create the screen.
-    //Navigator.of(context).pushNamed('/forgotPass');
+    Navigator.of(context).pushNamed('/forgotPass');
     return null;
   }
 }

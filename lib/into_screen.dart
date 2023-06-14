@@ -1,7 +1,6 @@
-import 'package:app/Login_screen.dart';
+import 'package:app/login.dart';
 import 'package:flutter/material.dart';
 import 'package:onboarding/onboarding.dart';
-
 
 
 class TestScreen extends StatefulWidget {
@@ -27,15 +26,9 @@ class _TestScreenState extends State<TestScreen> {
           controller: ScrollController(),
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 45.0,
-                  vertical: 90.0,
-                ),
-                child: Image.asset('images/news1.jpg',height: 200, width: 200),
-              ),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 45.0),
+               const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 45.0,
+                  vertical: 90.0,),
                 child: Align(
                   alignment: Alignment.center,
                   child: Text(
@@ -45,15 +38,23 @@ class _TestScreenState extends State<TestScreen> {
                   ),
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 45.0,
+                 // vertical: 5.0,
+                ),
+                child: Image.asset('images/news1.jpg',height: 200, width: 200),
+              ),
+             
             
               const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 45.0, vertical: 10.0),
+                padding: EdgeInsets.symmetric(horizontal: 45.0, vertical: 20.0),
                 child: Align(
                   alignment: Alignment.center,
                   child: Text(
                     'Keep your self close to your club by watching their news regularly',
                     style: pageInfoStyle,
-                    textAlign: TextAlign.left,
+                    textAlign: TextAlign.center,
                   ),
                 ),
               ),
@@ -75,15 +76,9 @@ class _TestScreenState extends State<TestScreen> {
           controller: ScrollController(),
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 45.0,
-                  vertical: 90.0,
-                ),
-                child: Image.asset('images/players.jpg',height: 200,width: 200),
-              ),
               const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 45.0),
+                padding: EdgeInsets.symmetric(horizontal: 45.0,
+                vertical:110.0),
                 child: Align(
                   alignment: Alignment.center,
                   child: Text(
@@ -93,14 +88,21 @@ class _TestScreenState extends State<TestScreen> {
                   ),
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 45.0,
+                  //vertical: 10.0,
+                ),
+                child: Image.asset('images/players.jpg',height: 200,width: 200),
+              ),
               const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 45.0, vertical: 10.0),
+                padding: EdgeInsets.symmetric(horizontal: 45.0, vertical: 20.0),
                 child: Align(
                   alignment: Alignment.center,
                   child: Text(
                     'your best player',
                     style: pageInfoStyle,
-                    textAlign: TextAlign.left,
+                    textAlign: TextAlign.center,
                   ),
                 ),
               ),
@@ -109,6 +111,59 @@ class _TestScreenState extends State<TestScreen> {
         ),
       ),
     ),
+
+
+
+PageModel(
+      widget: DecoratedBox(
+        decoration: BoxDecoration(
+          color: background,
+          border: Border.all(
+            width: 0.0,
+            color: background,
+          ),
+        ),
+        child: SingleChildScrollView(
+          controller: ScrollController(),
+          child: Column(
+            children: [
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 45.0,
+                vertical: 100.0,),
+                child: Align(
+                  alignment: Alignment.center,
+                  child: Text(
+                    'STREAMING LIVE ',
+                    style: pageTitleStyle,
+                    textAlign: TextAlign.left,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 45.0,
+                //  vertical: 20.0,
+                ),
+                child: Image.asset('images/live.png', height: 200,width: 200),
+              ),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 45.0, vertical: 20.0),
+                child: Align(
+                  alignment: Alignment.center,
+                  child: Text('You can watch your match in streaming live with high quality'
+                    ,
+                    style: pageInfoStyle,
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    ),
+
+
     PageModel(
       widget: DecoratedBox(
         decoration: BoxDecoration(
@@ -122,15 +177,9 @@ class _TestScreenState extends State<TestScreen> {
           controller: ScrollController(),
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 45.0,
-                  vertical: 90.0,
-                ),
-                child: Image.asset('images/tachkila.jpg', height: 200,width: 200),
-              ),
               const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 45.0),
+                padding: EdgeInsets.symmetric(horizontal: 45.0,
+                vertical: 110.0,),
                 child: Align(
                   alignment: Alignment.center,
                   child: Text(
@@ -140,14 +189,21 @@ class _TestScreenState extends State<TestScreen> {
                   ),
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 45.0,
+                 // vertical: 20.0,
+                ),
+                child: Image.asset('images/tachkila.jpg', height: 200,width: 200),
+              ),
               const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 45.0, vertical: 10.0),
+                padding: EdgeInsets.symmetric(horizontal: 45.0, vertical: 20.0),
                 child: Align(
                   alignment: Alignment.center,
                   child: Text('you can form your own team'
                     ,
                     style: pageInfoStyle,
-                    textAlign: TextAlign.left,
+                    textAlign: TextAlign.center,
                   ),
                 ),
               ),
@@ -173,14 +229,14 @@ class _TestScreenState extends State<TestScreen> {
         borderRadius: defaultSkipButtonBorderRadius,
         onTap: () {
           if (setIndex != null) {
-            index = 2;
-            setIndex(2);
+            index = 3;
+            setIndex(3);
           }
         },
         child: const Padding(
           padding: defaultSkipButtonPadding,
           child: Text(
-            'Skip',
+            'SKIP',
             style: defaultSkipButtonTextStyle,
           ),
         ),
@@ -218,7 +274,7 @@ class _TestScreenState extends State<TestScreen> {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.red,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: Scaffold(
@@ -250,9 +306,12 @@ class _TestScreenState extends State<TestScreen> {
                         indicator: Indicator(
       indicatorDesign: IndicatorDesign.polygon(
         polygonDesign: PolygonDesign(
-          polygon: DesignType.polygon_circle,
+          polygon: DesignType.polygon_diamond,
+          
         ),
       ),
+      activeIndicator : ActiveIndicator(color: Color.fromARGB(255, 220, 32, 32), borderWidth: 0.7),
+       closedIndicator : ClosedIndicator(color: Color.fromARGB(255, 220, 32, 32), borderWidth: 0.7),
     )
                       ),
                       index == pagesLength - 1

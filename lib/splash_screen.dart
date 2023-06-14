@@ -1,5 +1,8 @@
+import 'package:app/home.dart';
+import 'package:app/into_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_splash_screen/easy_splash_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Spalch_screen extends StatefulWidget{
 
@@ -30,3 +33,4 @@ class _Spalch_screenState extends State<Spalch_screen> {
     );
   }
 }
+ 
